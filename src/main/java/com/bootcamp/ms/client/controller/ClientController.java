@@ -12,7 +12,6 @@ import reactor.core.publisher.Mono;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/client")
 public class ClientController {
 
     private final Logger logger = LoggerFactory.getLogger(ClientController.class);
@@ -34,7 +33,7 @@ public class ClientController {
         return clientService.findById(id);
     }
 
-    @PostMapping("/save")
+    @PostMapping("/create")
     public Mono<Client> save(@RequestBody Client clientMono){
 
         logger.info("Registrando al cliente en la bd");
